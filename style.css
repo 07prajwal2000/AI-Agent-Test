@@ -78,10 +78,36 @@ h1 {
 }
 
 .todo-text {
-    cursor: pointer;
     flex-grow: 1;
     word-break: break-all;
     margin-right: 10px;
+}
+
+.todo-checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.todo-checkbox:checked {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.todo-checkbox:checked::after {
+    content: '\2714';
+    color: white;
+    font-size: 12px;
 }
 
 .delete-btn {
