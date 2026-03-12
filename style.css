@@ -77,8 +77,33 @@ h1 {
     color: #888;
 }
 
-.todo-text {
+.todo-checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+    margin-right: 15px;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.todo-checkbox:checked {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.todo-checkbox:checked::after {
+    content: '✔';
+    color: white;
+    font-size: 14px;
+}
+
+.todo-text {
     flex-grow: 1;
     word-break: break-all;
     margin-right: 10px;

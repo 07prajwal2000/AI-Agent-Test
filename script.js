@@ -21,12 +21,16 @@ document.addEventListener('DOMContentLoaded', () => {
     function createTodoItem(text) {
         const li = document.createElement('li');
         
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.classList.add('todo-checkbox');
+        checkbox.addEventListener('change', () => {
+            li.classList.toggle('completed');
+        });
+
         const span = document.createElement('span');
         span.textContent = text;
         span.classList.add('todo-text');
-        span.addEventListener('click', () => {
-            li.classList.toggle('completed');
-        });
 
         const deleteBtn = document.createElement('button');
         deleteBtn.textContent = 'Delete';
@@ -35,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
             li.remove();
         });
 
+        li.appendChild(checkbox);
         li.appendChild(span);
         li.appendChild(deleteBtn);
         todoList.appendChild(li);
